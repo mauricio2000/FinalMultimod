@@ -2,6 +2,10 @@ import paho.mqtt.client as paho
 import time
 import streamlit as st
 import json
+import pytesseract
+from bokeh.models.widgets import Button
+from bokeh.models import CustomJS
+from streamlit_bokeh_events import streamlit_bokeh_events
 values = 0.0
 act1="OFF"
 act2="Cerrao"
