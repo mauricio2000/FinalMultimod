@@ -62,7 +62,7 @@ if st.button('Abrir'):
     client1.on_publish = on_publish                          
     client1.connect(broker,port)   
     message =json.dumps({"Act2": act2})
-    ret= client1.publish("mauri2", message)
+    ret= client1.publish("mauri1", message)
     
  
 else:
@@ -74,7 +74,7 @@ if st.button('Cerrar'):
     client1.on_publish = on_publish                          
     client1.connect(broker,port)   
     message =json.dumps({"Act2": act2})
-    ret= client1.publish("mauri2", message)
+    ret= client1.publish("mauri1", message)
     
  
 else:
