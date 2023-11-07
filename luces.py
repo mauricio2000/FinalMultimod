@@ -3,6 +3,10 @@ import time
 import streamlit as st
 import json
 import os
+import cv2
+import time
+import glob
+import pytesseract
 from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
