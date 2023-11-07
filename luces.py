@@ -101,7 +101,7 @@ stt_button.js_on_event("button_click", CustomJS(code="""
             recognition.start();
             """))
         
-            result = streamlit_bokeh_events(
+result = streamlit_bokeh_events(
             stt_button,
             events="GET_TEXT",
             key="listen",
