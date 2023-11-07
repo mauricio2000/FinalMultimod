@@ -3,7 +3,6 @@ import time
 import streamlit as st
 import json
 import os
-import cv2
 import time
 import glob
 import pytesseract
