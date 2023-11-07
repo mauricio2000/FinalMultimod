@@ -61,7 +61,7 @@ if st.button('Abrir'):
     client1= paho.Client("ESTE_ES_MAURI2")                           
     client1.on_publish = on_publish                          
     client1.connect(broker,port)   
-    message =json.dumps({"Analog": act2})
+    message =json.dumps({"Act2": act2})
     ret= client1.publish("mauri2", message)
     
  
@@ -73,7 +73,7 @@ if st.button('Cerrar'):
     client1= paho.Client("ESTE_ES_MAURI2")                           
     client1.on_publish = on_publish                          
     client1.connect(broker,port)   
-    message =json.dumps({"Analog": act2})
+    message =json.dumps({"Act2": act2})
     ret= client1.publish("mauri2", message)
     
  
