@@ -4,6 +4,7 @@ import streamlit as st
 import json
 values = 0.0
 act1="OFF"
+act2="Cerrao"
 
 def on_publish(client,userdata,result):             #create function for callback
     print("el dato ha sido publicado \n")
@@ -25,8 +26,8 @@ client1.on_message = on_message
 
 
 
-st.title("MQTT Control")
-
+st.title("Casa Inteligente cmqtt")
+st.write("Control de luces")
 if st.button('Encender luces'):
     act1="Encendido"
     client1= paho.Client("ESTE_ES_MAURI2")                           
@@ -53,14 +54,26 @@ if st.button('Apagar Luces'):
 else:
     st.write('')
 
-values = st.slider('Selecciona el rango de valores',0.0, 100.0)
-st.write('Values:', values)
+st.write("Control puerta")
 
-if st.button('Enviar valor analógico'):
+if st.button('Abrir'):
+    act2="Abrido"
     client1= paho.Client("ESTE_ES_MAURI2")                           
     client1.on_publish = on_publish                          
     client1.connect(broker,port)   
-    message =json.dumps({"Analog": float(values)})
+    message =json.dumps({"Analog": act2})
+    ret= client1.publish("mauri2", message)
+    
+ 
+else:
+    st.write('')
+
+if st.button('Cerrar'):
+    act2="Cerrao"
+    client1= paho.Client("ESTE_ES_MAURI2")                           
+    client1.on_publish = on_publish                          
+    client1.connect(broker,port)   
+    message =json.dumps({"Analog": act2})
     ret= client1.publish("mauri2", message)
     
  
