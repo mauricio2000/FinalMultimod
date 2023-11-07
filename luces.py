@@ -2,10 +2,6 @@ import paho.mqtt.client as paho
 import time
 import streamlit as st
 import json
-import pytesseract
-from bokeh.models.widgets import Button
-from bokeh.models import CustomJS
-from streamlit_bokeh_events import streamlit_bokeh_events
 values = 0.0
 act1="OFF"
 act2="Cerrao"
@@ -85,8 +81,8 @@ else:
     st.write('')
 
 st.write("Toca el Botón y habla lo que quires traducir")
-        
-        stt_button.js_on_event("button_click", CustomJS(code="""
+stt_button = Button(label=" Inicio ", width=200)       
+stt_button.js_on_event("button_click", CustomJS(code="""
             var recognition = new webkitSpeechRecognition();
             recognition.continuous = true;
             recognition.interimResults = true;
