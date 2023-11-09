@@ -9,6 +9,7 @@ from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
 from PIL import Image
+from gtts import gTTS
 
 st.subheader("Has elegido AUDIO")
 stt_button = Button(label=" Inicio ", width=200) 
