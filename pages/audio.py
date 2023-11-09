@@ -56,4 +56,4 @@ if 5==5:
             translator = Translator()
             
             text = str(result.get("GET_TEXT"))
-}
+
